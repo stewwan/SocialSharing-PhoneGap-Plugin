@@ -359,6 +359,7 @@ public class SocialSharing extends CordovaPlugin {
             cordova.getActivity().runOnUiThread(new Runnable() {
               public void run() {
                 Intent chooseIntent;
+                callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK));
                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP_MR1) {
                   // Intent.createChooser's third param was only added in SDK version 22.
                   chooseIntent = Intent.createChooser(sendIntent, chooserTitle, pendingIntent.getIntentSender());
