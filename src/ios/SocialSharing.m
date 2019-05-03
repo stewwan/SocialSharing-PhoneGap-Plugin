@@ -95,10 +95,7 @@ static NSString *const kShareOptionUrl = @"url";
     if (filenames != (id)[NSNull null] && filenames != nil && filenames.count > 0) {
       NSMutableArray *files = [[NSMutableArray alloc] init];
       for (NSString* filename in filenames) {
-        NSObject *file = [self getImage:filename];
-        if (file == nil) {
-          file = [self getFile:filename];
-        }
+        NSObject *file = [self getFile:filename];
         if (file != nil) {
           [files addObject:file];
         }
